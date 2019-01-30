@@ -110,4 +110,6 @@ def fail(message):
     out={}
     out['result']='fail'
     out['description']=message
+    this is a better and a
+    ndew option that i want to store online system
     return HttpResponse(json.dumps(out))
