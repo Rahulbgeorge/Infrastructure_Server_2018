@@ -1,0 +1,7 @@
+nav{background-color:#0a0a0a; position:fixed; color:rgb(189, 183, 183);  left:0px; top:0px; width:20%; height:100%;}
+nav li{list-style: none; font-size:20px;padding:15px; box-sizing: border-box;}
+nav ul{width:100%;}
+.navTitle{font-size:30px; margin:auto; margin-top:80px; margin-bottom:30px; color:#B50D0D; }
+.navOption:hover{color:#fafafa;cursor: pointer;}
+.navOption span{margin-right:20px;}
+.main{width:80%; height:100%; overflow-y:scroll; position:fixed; right:0px; top:0px;}

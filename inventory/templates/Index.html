@@ -1,0 +1,33 @@
+<html>
+    <head>
+        {%load staticfiles%}
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'style.css'%}">
+<script src="{% static 'script.js'%}"></script>
+
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li class="navTitle">CUIM</li>
+                <li class="navOption" id="newStock"><span class="glyphicon glyphicon-plus	" ></span>New Stock</li>
+                <li class="navOption"><span class="glyphicon glyphicon-shopping-cart" id="take"></span> Take</li>
+                <li class="navOption"><span class="glyphicon glyphicon-list-alt	" id="logs"></span>Logs</li>
+                <li class="navOption" id="statistics"><span class="glyphicon glyphicon-stats" ></span>Statistics</li>
+                <li class="navOption"><span class="glyphicon glyphicon-exclamation-sign" id="alert"></span>Alert</li>
+                <li class="navOption"><span class="glyphicon glyphicon-folder-open" id="bulkUpload"></span>Bulk Upload</li>
+            </ul>
+        </nav>
+
+        <div class="main" id="contentScreen">
+        </div>
+
+    </body>
+</html>
