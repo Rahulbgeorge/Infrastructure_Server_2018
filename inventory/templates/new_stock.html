@@ -1,0 +1,195 @@
+<html>
+    <head>
+        {%load staticfiles%}
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> -->
+        <script src="/static/common/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="data.js"></script> -->
+        <script type="text/javascript" src="{% static 'NewStock/new_stock.js' %}"></script>
+
+
+
+                 <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+                <link rel="stylesheet" href="{% static 'NewStock/new_stock.css' %}">
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
+        
+
+    </head>
+    <body>
+
+    <!--NAVIGATION BAR TOP-->
+            <nav class="navbar navbar-default navbar-expand-lg ">
+
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#"><img src="/static/images/christlogo.jpg" height="30px" ></a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li class=""><a href="/">Home</a></li>
+                  <li class="active"><a href="/newstock">New Stock</a></li>
+                  <li ><a href="/bill_page">Bill </a></li>
+                </ul>
+
+
+              </nav>
+      <!--NAVIGATION BAR TOP END-->
+
+
+
+
+          <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title mr-auto" align=center>New Item</h4>
+            </div>
+            <div class="modal-body">
+              <h5>New Item details</h5>
+              <table class="newProductTable">
+                  <tr><td>Item name:</td><td> <Input type='test' id='newItemName'></td></tr>
+                  <tr><td>Item Mass (Optional):</td><td><Input type='number' id="newItemMass" placeholder="eg: 2 in harpic 2L">  </td></tr>
+                  <tr><td>Item Mass Type (Optional):</td><td><select id='itemType'  >
+                        <option value="n">None</option>    
+                        <option value="g">Grams</option>
+                            <option value="kg">KiloGrams</option>
+                            <option value="l">Litre</option>
+                            <option value="ml">milli litre</option>
+                        </select></td></tr>
+                        <tr><td>Bill Category</td><td><select id="itemcategory">
+                            <option value="h">House keeping</option>
+                            <option value="e">Electronics</option>
+                            <option value="p">Plumbing</option>
+                            <option value="a">All</option>
+                          </select></td>
+                        </tr>
+                </table>
+                <hr>
+                <h5>Inventory Data(Optional)</h5>
+                <table class="newProductTable" id="newProductTable">
+                   
+                        <tr><td>Quantity</td><td><input type=number id="newInventoryQty"></td></tr>
+                </table>
+                <br><br>
+                <button id="saveProduct" class="btn btn-primary" onClick="saveProduct()" style="float:right;">Save New Product</button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-danger" data-dismiss="modal" id="modalCloseButton">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+      <!--ENDING OF MODAL-->
+
+
+
+        <div class="content">
+                              
+        <div class="container">
+            <h3 class="heading"><center><u>New Stock</u></center></h3>
+
+
+            <h5 class="subTitle">Bill Details</h5><br>
+
+            <table class="bill_table">
+                    <tr>
+                        <td>
+            
+                            Gstin :</td><td><input class="second_col" type="text" id="gst" placeholder="Enter GST">
+                        </td>
+                                <td>
+                                    Bill category:</td><td > <select id="billCategory">
+                            <option value="h">House keeping</option>
+                            <option value="e">Electronics</option>
+                            <option value="p">Plumbing</option>
+                            <option value="a">All</option>
+                          </select>
+                                </td>
+                    </tr>
+                    <tr>
+                    <td> 
+                        Bill amount :</td><td> <input class="second_col" type='number' id="billCost">
+                    </td>
+                    <td>
+                        Date :</td><td><input type='date' id="billDate">
+                    </td>
+                    <tr>
+                </table>
+
+                <hr>
+
+                <h5 align=left  class="subTitle">Bill Product Details</h5><br>
+  <div  class="newStockTable">
+      <table class="table table-hover stocktable" id="stockTable">
+          <thead>
+          <tr>
+              <th>S.no</th>
+              <th>Item</th>
+              <th>Qty</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td></td>
+              <td style="color:gray">eg: Harpic</td>
+              <td style="color:gray">eg: 20</td>
+          </tr>
+          
+         
+        
+         <tr><td>1</td>
+              <td><input type="text" placeholder="Item Name" id="itemname" ></td>
+            <td><input type="number" id="qty"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="modalOpenButton">Add Item</button>
+      <button onClick="saveBillData()" class="btn btn-primary">Save Bill</button>
+  </div>
+        <!-- ENDING OF THE TABLE -->
+  
+        
+      
+
+
+        </div>
+        </div>
+        <div class="displaySection">
+            <center><h5 class="suggestion">Suggestion box</h5></center>
+            <hr>
+            <div id="data">
+                <div class="dataItem">
+                    Harpic cleaner
+                </div>
+                <div class="dataItem">
+                        Vinegar
+                    </div>
+            </div>
+
+            <div class="newItem" data-toggle="modal" data-target="#myModal"><center>+ New Item</center></div>
+        </div>
+    </body>
+</html>

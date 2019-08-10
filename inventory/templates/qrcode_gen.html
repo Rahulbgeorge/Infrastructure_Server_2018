@@ -1,0 +1,70 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+            <!-- Popper JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> 
+       
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- <script type="text/javascript" src="data.js"></script> -->
+            <!--<script type="text/javascript" src="static/NewStock/new_stock.js"></script>-->
+    
+                     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="static/qrcode.min.js"></script>
+
+    
+
+<style>
+    .spacing_track{
+        margin-bottom:50px;
+    }
+</style>
+    
+    <script>
+         var data=[{'name':'harpic','id':'20','qty':4},{'name':"dosa_kal",'qty':2,'id':'32'}];
+        $(document).ready(function(){
+            var ip=window.location.origin;
+            console.log(ip);
+            $.get(ip+"/bill/{{bill_id}}/",function(output){
+                data=output['bill'];
+                console.log(data);
+                console.log(output);
+                 data.forEach(function(item){
+                for(var i=0;i<item['qty'];i++)
+                {
+                    itemid=i+"";
+                    var col=$("<div/>").attr("id",itemid).addClass("col-md-6");
+                    $(".row").append(col);
+                    console.log("item"+item['id']);
+                    new QRCode(document.getElementById(itemid), item['id']+"");
+                    $("#"+itemid).append(item['name']);
+                    col.addClass("spacing_track");
+
+
+                }
+            });
+            })
+
+            $("#qrcode").append("Random data is shown");
+
+
+        });
+    </script>
+
+    </head>
+    <body class="container">
+        <div class="row">
+        </div>
+    </body>
+</html>

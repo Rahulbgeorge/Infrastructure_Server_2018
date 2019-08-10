@@ -1,0 +1,121 @@
+#myModal{
+    overflow-y: scroll;
+}
+
+.content{position:fixed;
+        width:80%;
+        height:100%;
+        left:0px;
+        padding-bottom:500px;
+        padding-left:30px;
+        overflow-y:scroll;
+       
+}
+.displaySection{position:fixed;
+            width:20%;
+            height:100%;
+            background:#03A9F4;
+             right:0px;
+             padding-top:10px ;
+            }
+
+.newItem{
+    position: absolute;
+    bottom:0px;
+    padding-bottom:10px;
+    padding-top:10px;
+    align-content: center;
+    align:center;
+    width:100%;
+    color:white;
+    cursor: pointer;
+    background:#3F51B5;
+
+}
+
+.heading{
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+
+.newStockTable table{
+    font-size:14px;
+}
+
+.newStockContianer{
+    height:100%;
+}
+
+.bill{position:relative;
+      left:100px;
+      margin-bottom:30px;
+    }
+
+.bill_table{
+    position:relative;
+   transform:translateX(-20%);
+    left:20%;
+    font-size:12px;
+}
+
+
+
+.bill_table td{
+    padding-left:4px;
+    padding-right:4px;
+    padding-bottom:20px;
+    font-size :14px;
+}
+
+.second_col{
+    margin-right:100px;
+}
+
+.bill_table input,select{
+    width:150px;
+    height:22px;
+}
+
+
+
+.subTitle{
+    color:#03A9F4;
+}
+
+#data{
+    margin-top:10px;
+}
+.dataItem{
+    padding-left:10px;
+    color:white;
+
+
+}
+.dataItem:hover, .dataItem:focus{
+    background:#3F51B5;
+    color:white;
+    cursor: pointer;
+    
+}
+
+
+
+.newProductTable select,input{
+    width:150px;
+    height:24px;
+}
+
+.newProductTable td{
+    padding:10px;
+}
+
+.suggestion{
+    color:white;
+}
+
+.navbar{
+    margin-bottom:0px;
+}
+
+

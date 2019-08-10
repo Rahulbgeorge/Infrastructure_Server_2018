@@ -1,0 +1,158 @@
+<html>
+
+<head>
+
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+
+<!-- jQuery library -->
+ <script src="/static/common/jquery.min.js"></script>
+   <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"/> 
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+  
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> 
+
+    <style>
+        .card{
+            height:200px;
+            width:180px;
+            background:#e040fb;
+            margin-top:20px;
+            padding:10px;
+            box-shadow:5px 5px lightgrey;
+        }
+    
+        .card .alphabet{
+            font-size:80px;
+            color:white;
+            width:100%;
+            text-align: center;
+        }
+        .card:hover {
+           color:black;
+            opacity: 0.7;
+            box-shadow:0px 0px lightgrey;
+        }
+
+        .tabledata td{
+            padding:10px;
+            color:white;
+        }
+
+
+        .buttonGroup_container
+        {
+           margin:auto;
+           width:fit-content;
+            align-content: center;
+
+        }
+
+        .btn{
+            padding-left:30px;
+            padding-right:30px;
+            border-radius: 20px;
+        }
+
+        .container{margin-top:40px;
+        }
+
+        .searchBar  {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-size: 30px 30px;
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            }
+
+            /* When the input field gets focus, change its width to 100% */
+           .searchBar:focus {
+            width: 100%;
+            
+            }
+
+            #mytable td , #mytable tr , #mytable th{
+            <!--border:2px solid black;-->
+            padding:10px;
+            }
+
+            #mytable thead{
+            color:white;
+            background-color:red;
+
+            }
+   
+            #productTable thead{
+                background-color:blue;
+            }
+
+      
+
+    
+        </style>
+
+        <script src="/static/bill.js"></script>
+
+</head>
+<body>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    
+      </div>
+      <div class="modal-body">
+        <table id="productTable" style="width:100%;">
+        </table>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="print" value="0" >Print</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+       <nav class="navbar navbar-default navbar-expand-lg ">
+
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#"><img src="/static/images/christlogo.jpg" height="30px" ></a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li class=""><a href="/">Home</a></li>
+                  <li class=""><a href="/newstock">New Stock</a></li>
+                  <li class="active"><a href="/bill_page">Bill </a></li>
+                </ul>
+
+
+              </nav>
+
+           
+             
+            
+<div class="container">
+       <table class="display" id="mytable">
+       </table>
+</div>
+
+
+</body>
+</html>

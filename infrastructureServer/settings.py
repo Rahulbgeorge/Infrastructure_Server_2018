@@ -25,7 +25,9 @@ SECRET_KEY = ')-o=oauh$mf-x47w+#a!fco3vs%+otond=v33o3tcrsy@f1i9r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','192.168.0.6','192.168.137.1']
+
+AXIS_TOKEN="ABCDEFGHIJKLMNOP1234"
 
 
 # Application definition
@@ -39,9 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'inventory',
     'angtest',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework',
+    'django_filters'
 
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -110,6 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -129,3 +138,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = "d://infrastructure/static/"
